@@ -1,0 +1,4 @@
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+export const CHANGE_ZIPCODE = 'CHANGE_ZIPCODE'
+export const ADDRESS_CHANGED = 'ADDRESS_CHANGED'

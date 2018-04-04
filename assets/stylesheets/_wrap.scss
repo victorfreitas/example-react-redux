@@ -1,5 +1,7 @@
 body {
-	background-color: $colorBody;
-	margin: 0 auto;
-	width: 1024px;
+  background-color: $colorBody;
+  color: $colorText;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
 }

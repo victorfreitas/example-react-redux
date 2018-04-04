@@ -1,12 +1,16 @@
 .container {
-	background-color: $colorWhite;
-	border-radius: 5px;
-	box-shadow: 0px 0px 7px 1px $colorDefault;
-	margin-top: 50px;
-	padding: 30px;
+  background-color: $colorWhite;
+  border: 1px solid #e2e2e2;
+  margin: 0 auto;
+  padding: 30px;
 
 	.title {
 		text-align: center;
 		margin-bottom: 16px;
-	}
+  }
+
+  @media (min-width: 1200px) {
+    margin: 10px auto;
+    width: 1170px;
+  }
 }

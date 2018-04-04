@@ -72,6 +72,7 @@ class ZipCode extends Component {
 				</label>
 
 				<input
+          type='number'
 					value={this.props.value}
 					placeholder='Enter your ZIP Code'
 					onChange={this.handleChangeZipCode}

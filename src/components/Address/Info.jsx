@@ -1,7 +1,16 @@
 import React from 'react'
 
 export default ({ address }) => {
-	const { cep, logradouro, bairro, localidade, uf } = address
+  const { error, cep, logradouro, bairro, localidade, uf } = address
+
+  if (error) {
+    return (
+      <p
+        className='error-message'
+        dangerouslySetInnerHTML={{__html : error}}
+      ></p>
+    )
+  }
 
 	return (
 		<div className="info">

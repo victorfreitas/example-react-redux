@@ -3,13 +3,14 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 
 import { getAddressByZipCode } from '../../requests'
+import { formatZipCode } from '../../helpers'
 
 class ZipCode extends Component {
 	constructor(props) {
 		super(props)
 
 		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChangeZipCode = this.handleChangeZipCode.bind(this)
+    this.handleChangeZipCode = this.handleChangeZipCode.bind(this)
 	}
 
 	isValidZipCode() {
@@ -18,12 +19,18 @@ class ZipCode extends Component {
 
 	findZipCode() {
 		getAddressByZipCode(this.props.value)
-			.then(data => {
-				this.props.changeAddress(data)
-				this.props.changeZipCode('')
-			})
+			.then(data => this.onSuccess(data))
 			.catch(() => {})
-	}
+  }
+
+  clear() {
+    this.props.changeZipCode('')
+  }
+
+  onSuccess(data) {
+    this.props.changeAddress(data)
+    this.clear()
+  }
 
 	handleChangeZipCode({ target }) {
 		this.props.changeZipCode(target.value)
@@ -34,29 +41,23 @@ class ZipCode extends Component {
 		this.findZipCode()
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate({ value }) {
 		if (this.isValidZipCode()) {
 			this.findZipCode()
-		}
-	}
+    }
+  }
 
 	renderZipCodeText() {
 		if (!this.props.value) {
 			return null
 		}
 
-		let zipCode = this.props.value.substring(0, 5)
-
-		if (this.props.value.length > 5) {
-			zipCode += `-${this.props.value.substring(5, 8)}`
-		}
-
 		return (
 			<p>
-				CEP: {zipCode}
+				CEP: {formatZipCode(this.props.value)}
 			</p>
 		)
-	}
+  }
 
 	render() {
 		return (

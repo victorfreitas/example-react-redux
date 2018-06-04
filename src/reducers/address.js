@@ -1,4 +1,4 @@
-import { ADDRESS_CHANGED } from '../constants/ActionTypes'
+import { ADDRESS_CHANGED } from '../constants'
 
 const initalState = {
 	cep: '-',

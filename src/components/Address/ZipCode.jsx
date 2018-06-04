@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-
 import classNames from 'classnames'
 
-import { getAddressByZipCode } from '../../requests'
 import { formatZipCode } from '../../helpers'
 
 class ZipCode extends Component {
@@ -18,18 +16,8 @@ class ZipCode extends Component {
 	}
 
 	findZipCode() {
-		getAddressByZipCode(this.props.value)
-			.then(data => this.onSuccess(data))
-			.catch(() => {})
-  }
-
-  clear() {
+    this.props.changeAddress(this.props.value)
     this.props.changeZipCode('')
-  }
-
-  onSuccess(data) {
-    this.props.changeAddress(data)
-    this.clear()
   }
 
 	handleChangeZipCode({ target }) {
@@ -41,7 +29,7 @@ class ZipCode extends Component {
 		this.findZipCode()
 	}
 
-	componentDidUpdate({ value }) {
+	componentDidUpdate() {
 		if (this.isValidZipCode()) {
 			this.findZipCode()
     }
@@ -63,7 +51,7 @@ class ZipCode extends Component {
 		return (
 			<form
 				className={classNames('zipcode-form', {
-					'spinner': this.isValidZipCode()
+					'spinner': this.props.isWait
 				})}
 				onSubmit={this.handleSubmit}
 			>
@@ -75,7 +63,8 @@ class ZipCode extends Component {
           type='number'
 					value={this.props.value}
 					placeholder='Enter your ZIP Code'
-					onChange={this.handleChangeZipCode}
+          onChange={this.handleChangeZipCode}
+          disabled={this.props.isWait}
 				/>
 
 				{this.renderZipCodeText()}

@@ -8,7 +8,7 @@ module.exports = isProd => ({
 	},
 	output: {
 		path: `${public}/js`,
-		filename: '[name].bundle.js'
+		filename: 'bundle.js'
 	},
 	module: {
 		rules: [

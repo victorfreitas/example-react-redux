@@ -7,7 +7,8 @@ import { changeZipCode, changeAddress } from '../../actions'
 import ZipCode from '../../components/Address/ZipCode'
 
 const mapStateToProps = state => ({
-	value: state.zipcode
+  value: state.zipcode,
+  isWait: state.isWait
 })
 
 const mapDispatchToProps = dispatch => (

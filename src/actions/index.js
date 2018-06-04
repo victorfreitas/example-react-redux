@@ -1,11 +1,13 @@
-import {
-	INCREMENT,
-	DECREMENT,
-	ADDRESS_CHANGED,
-	CHANGE_ZIPCODE
-} from '../constants/ActionTypes'
+import increment from './increment'
+import decrement from './decrement'
+import changeZipCode from './changeZipCode'
+import changeAddress from './changeAddress'
+import isWait from './isWait'
 
-export const increment = payload => ({type: INCREMENT, payload})
-export const decrement = payload => ({type: DECREMENT, payload})
-export const changeZipCode = payload => ({type: CHANGE_ZIPCODE, payload})
-export const changeAddress = payload => ({type: ADDRESS_CHANGED, payload})
+export {
+  increment,
+  decrement,
+  changeZipCode,
+  changeAddress,
+  isWait
+}

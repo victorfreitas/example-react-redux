@@ -1,4 +1,4 @@
-import { CHANGE_ZIPCODE } from '../constants/ActionTypes'
+import { CHANGE_ZIPCODE } from '../constants'
 
 const sanitizeZipCodeBr = value => (
 	value.replace(/[^\d]+/g, '').substring(0, 8)

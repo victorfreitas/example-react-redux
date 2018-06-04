@@ -10,8 +10,10 @@ module.exports = merge(common(false), {
 		new BrowserSyncPlugin({
 			host: '127.0.0.1',
       port: 3002,
-			proxy: 'http://react-redux.site',
-			reload: true
+      reload: true,
+      server: {
+        baseDir: ['public']
+      }
 		})
 	]
 })

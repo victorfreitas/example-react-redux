@@ -1,5 +1,5 @@
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const cssnano = require("cssnano")
+const cssnano = require('cssnano')
 
 module.exports = prod => (
   prod && new OptimizeCSSAssetsPlugin({

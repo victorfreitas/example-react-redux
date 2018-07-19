@@ -1,6 +1,6 @@
-import { ADDRESS_CHANGED, IS_WAIT } from '../constants'
-import { viaCepApi } from '../environments'
-import { formatZipCode } from '../helpers'
+import { ADDRESS_CHANGED, IS_WAIT } from 'src/constants'
+import { viaCepApi } from 'src/environments'
+import { formatZipCode } from 'src/helpers'
 
 class ChangeAddress {
   constructor(zipCode, dispatch) {

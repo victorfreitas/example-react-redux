@@ -1,4 +1,4 @@
-import { ADDRESS_CHANGED } from '../constants'
+import { ADDRESS_CHANGED } from 'src/constants'
 
 const initalState = {
 	cep: '-',

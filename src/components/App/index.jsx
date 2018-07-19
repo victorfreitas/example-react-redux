@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import Counter from '../../containers/Counter'
-import Address from '../../components/Address'
+import Counter from 'src/containers/Counter'
+import Address from 'src/components/Address'
+import Icons from 'src/components/Icons'
 
 class App extends Component {
 	constructor(props) {
@@ -12,8 +13,9 @@ class App extends Component {
 		return (
 			<div className="container">
 				<h1 className="title">
-					React + Redux
+					React Redux Starter
 				</h1>
+        <Icons />
 				<Counter />
 				<Address />
 			</div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
-import { formatZipCode } from '../../helpers'
+import { formatZipCode } from 'src/helpers'
 
 class ZipCode extends Component {
 	constructor(props) {

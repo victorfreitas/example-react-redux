@@ -1,8 +1,13 @@
 const { join } = require('path')
 
+const root = join(__dirname, '..')
+const assets = `${root}/assets`;
+
 module.exports = {
-	root: join(__dirname, '..', '/'),
-	src: join(__dirname, '..', 'src'),
-	public: join(__dirname, '..', 'public'),
-	stylesheets: join(__dirname, '..', 'assets/stylesheets')
+  root,
+  assets,
+  src: `${root}/src`,
+  scss: `${assets}/scss`,
+  images: `${assets}/images`,
+  public: `${root}/docs`
 }

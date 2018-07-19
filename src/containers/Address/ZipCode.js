@@ -3,8 +3,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { changeZipCode, changeAddress } from '../../actions'
-import ZipCode from '../../components/Address/ZipCode'
+import { changeZipCode, changeAddress } from 'src/actions'
+import ZipCode from 'src/components/Address/ZipCode'
 
 const mapStateToProps = state => ({
   value: state.zipcode,

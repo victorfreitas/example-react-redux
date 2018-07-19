@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ShowCounts from '../../containers/Counter/ShowCounts'
+import ShowCounts from 'src/containers/Counter/ShowCounts'
 
 class Counter extends Component {
 	constructor(props) {
@@ -20,7 +20,7 @@ class Counter extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='counter-container'>
 				<ShowCounts />
 				<div className='buttons'>
 					<a className='btn' onClick={this.handleIncrement}>

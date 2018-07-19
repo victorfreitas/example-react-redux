@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ZipCode from '../../containers/Address/ZipCode'
-import Info from '../../containers/Address/Info'
+import ZipCode from 'src/containers/Address/ZipCode'
+import Info from 'src/containers/Address/Info'
 
 export default props => (
 	<div className="address-content">

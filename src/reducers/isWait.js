@@ -1,4 +1,4 @@
-import { IS_WAIT } from '../constants'
+import { IS_WAIT } from 'src/constants'
 
 const initialState = false
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Info from '../../components/Address/Info'
+import Info from 'src/components/Address/Info'
 
 const mapStateToProps = state => ({
 	address: state.address

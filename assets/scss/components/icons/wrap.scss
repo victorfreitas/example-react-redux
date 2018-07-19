@@ -1,0 +1,14 @@
+.icons-wrap {
+  @extend %section;
+
+  .icons-content {
+    margin: 20px 0 0 0;
+  }
+
+  .icon {
+    color: $colorBlue;
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 5px;
+  }
+}

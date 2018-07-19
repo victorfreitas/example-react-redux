@@ -1,13 +1,12 @@
 .address-content {
-	display: block;
-	margin-top: 30px;
+  @extend %section;
 
 	.zipcode-form {
 		position: relative;
 
 		&.spinner {
 			&:before {
-				content: url('../icons/spinner.svg');
+				content: url("../images/icons/spinner.svg");
 				position: absolute;
 				left: 192px;
 				top: 0;

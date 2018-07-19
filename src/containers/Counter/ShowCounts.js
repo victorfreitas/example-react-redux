@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import ShowCounts from '../../components/Counter/ShowCounts'
+import ShowCounts from 'src/components/Counter/ShowCounts'
 
 const mapStateToProps = state => ({
 	counts: state.counters

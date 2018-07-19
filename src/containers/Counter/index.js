@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import Counter from '../../components/Counter'
-import { increment, decrement } from '../../actions'
+import Counter from 'src/components/Counter'
+import { increment, decrement } from 'src/actions'
 
 const mapDispatchToProps = dispatch => (
 	bindActionCreators({

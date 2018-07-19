@@ -1,3 +1,3 @@
-import { DECREMENT } from '../constants'
+import { DECREMENT } from 'src/constants'
 
 export default payload => ({type: DECREMENT, payload})

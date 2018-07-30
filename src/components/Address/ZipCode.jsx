@@ -35,18 +35,6 @@ class ZipCode extends Component {
     }
   }
 
-	renderZipCodeText() {
-		if (!this.props.value) {
-			return null
-		}
-
-		return (
-			<p>
-				CEP: {formatZipCode(this.props.value)}
-			</p>
-		)
-  }
-
 	render() {
 		return (
 			<form
@@ -66,8 +54,6 @@ class ZipCode extends Component {
           onChange={this.handleChangeZipCode}
           disabled={this.props.isWait}
 				/>
-
-				{this.renderZipCodeText()}
 			</form>
 		)
 	}

@@ -1,5 +1,4 @@
 import React from 'react'
-import uuid from 'uuid'
 
 const list = [
   'pacman',
@@ -41,13 +40,13 @@ const list = [
   'crying2'
 ]
 
-export default props => (
+export default () => (
   <div className='icons-wrap'>
     <h2>Icons</h2>
 
     <div className="icons-content">
-      {list.map(icon => (
-        <i key={uuid()} className={`icon icon-${icon}`}></i>
+      {list.map((icon, i) => (
+        <i key={i} className={`icon icon-${icon}`}></i>
       ))}
     </div>
   </div>

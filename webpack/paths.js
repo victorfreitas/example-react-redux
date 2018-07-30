@@ -9,5 +9,6 @@ module.exports = {
   src: `${root}/src`,
   scss: `${assets}/scss`,
   images: `${assets}/images`,
+  html: `${assets}/html`,
   public: `${root}/docs`
 }

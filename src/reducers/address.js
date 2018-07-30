@@ -1,12 +1,6 @@
 import { ADDRESS_CHANGED } from 'src/constants'
 
-const initalState = {
-	cep: '-',
-	logradouro: '-',
-	bairro: '-',
-	localidade: '-',
-	uf: '-'
-}
+const initalState = {}
 
 export default (state = initalState, action) => {
 	switch (action.type) {

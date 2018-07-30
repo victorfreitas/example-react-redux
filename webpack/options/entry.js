@@ -1,7 +1,10 @@
-const { src } = require('../paths')
+const { src, scss } = require('../paths')
 
 module.exports = () => ({
   entry: {
-    app: `${src}/index.jsx`
+    app: [
+      `${src}/index.jsx`,
+      `${scss}/style.scss`
+    ]
   }
 })

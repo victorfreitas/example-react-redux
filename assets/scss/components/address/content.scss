@@ -6,7 +6,7 @@
 
 		&.spinner {
 			&:before {
-				content: url("../images/icons/spinner.svg");
+				content: url(~assets/images/icons/spinner.svg);
 				position: absolute;
 				left: 192px;
 				top: 0;
@@ -27,13 +27,6 @@
 		.btn {
 			margin-left: 5px;
 			padding: 6px 8px;
-		}
-
-		p {
-			bottom: -18px;
-			font-size: 12px;
-			left: 40px;
-			position: absolute;
 		}
 	}
 
@@ -76,5 +69,9 @@
     margin-bottom: 5px;
     margin-top: 35px;
     padding: 12px 15px;
+  }
+
+  .hidden {
+    display: none;
   }
 }

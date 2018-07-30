@@ -1,24 +1,45 @@
-import React from 'react'
+import React, { Component } from 'react'
+import classNames from 'classnames'
 
-export default ({ address }) => {
-  const { error, cep, logradouro, bairro, localidade, uf } = address
+class Info extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-  if (error) {
+  getItems() {
+    const list = Object.entries(this.props.address)
+
+    return list.map(item => this.renderItem(item))
+  }
+
+  renderItem([key, value]) {
+    return (
+      <p key={key}>
+        <span>{key}:</span> <strong>{value}</strong>
+      </p>
+    )
+  }
+
+  renderError() {
     return (
       <p
         className='error-message'
-        dangerouslySetInnerHTML={{__html : error}}
+        dangerouslySetInnerHTML={{__html : this.props.address.error}}
       ></p>
     )
   }
 
-	return (
-		<div className="info">
-			<p><span>ZIP Code:</span> <strong>{cep}</strong></p>
-			<p><span>Street:</span> <strong>{logradouro}</strong></p>
-			<p><span>Neighborhood:</span> <strong>{bairro}</strong></p>
-			<p><span>City:</span> <strong>{localidade}</strong></p>
-			<p><span>State:</span> <strong>{uf}</strong></p>
-		</div>
-	)
+  render() {
+    if (this.props.address.error) {
+      return this.renderError()
+    }
+
+    return (
+      <div className={classNames('info', {hidden: !this.props.address.cep})}>
+        {this.getItems()}
+      </div>
+    )
+  }
 }
+
+export default Info

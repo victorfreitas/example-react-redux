@@ -1,9 +1,11 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
-const { public } = require('../paths')
+const { public, html } = require('../paths')
 
-module.exports = prod => (
-  !prod && new HTMLWebpackPlugin({
-    template: `${public}/index.html`
+module.exports = () => (
+  new HTMLWebpackPlugin({
+    filename: `${public}/index.html`,
+    template: `${html}/index.html`,
+    hash: true
   })
 )

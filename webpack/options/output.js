@@ -2,7 +2,8 @@ const { public } = require('../paths')
 
 module.exports = () => ({
   output: {
-    path: `${public}/js`,
-    filename: 'bundle.js'
+    path: `${public}/dist`,
+    filename: 'bundle.js',
+    chunkFilename: 'vendor.bundle.js'
   }
 })

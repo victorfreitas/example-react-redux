@@ -1,4 +1,4 @@
-const formatZipCode = value => {
+export const formatZipCode = value => {
   let zipCode = value.substring(0, 5)
 
   if (value.length > 5) {
@@ -6,8 +6,4 @@ const formatZipCode = value => {
   }
 
   return zipCode
-}
-
-export {
-  formatZipCode
 }

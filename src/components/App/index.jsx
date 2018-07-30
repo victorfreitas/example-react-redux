@@ -13,7 +13,7 @@ class App extends Component {
 		return (
 			<div className="container">
 				<h1 className="title">
-					React Redux Starter
+					React + Redux
 				</h1>
         <Icons />
 				<Counter />

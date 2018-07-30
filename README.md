@@ -1,2 +1,1 @@
-# React Redux
-Starting with React Redux
+# React + Redux

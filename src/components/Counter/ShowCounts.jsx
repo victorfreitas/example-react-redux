@@ -1,7 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ counts }) => (
-	<span className="counts">
-		Counter: <strong>{counts}</strong>
-	</span>
+const ShowCounts = ({ counts }) => (
+  <span className="counts">
+    Counter:
+    <strong>
+      {counts}
+    </strong>
+  </span>
 )
+
+ShowCounts.propTypes = {
+  counts: PropTypes.number.isRequired,
+}
+
+export default ShowCounts

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -8,14 +6,14 @@ import ZipCode from 'src/components/Address/ZipCode'
 
 const mapStateToProps = state => ({
   value: state.zipcode,
-  isWait: state.isWait
+  isWait: state.isWait,
 })
 
 const mapDispatchToProps = dispatch => (
-	bindActionCreators({
-		changeZipCode,
-		changeAddress
-	}, dispatch)
+  bindActionCreators({
+    changeZipCode,
+    changeAddress,
+  }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(ZipCode)

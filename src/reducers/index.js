@@ -6,8 +6,8 @@ import zipcode from './zipcode'
 import isWait from './isWait'
 
 export default combineReducers({
-	counters,
-	address,
+  counters,
+  address,
   zipcode,
-  isWait
+  isWait,
 })

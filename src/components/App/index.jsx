@@ -1,26 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Counter from 'src/containers/Counter'
 import Address from 'src/components/Address'
 import Icons from 'src/components/Icons'
 
-class App extends Component {
-	constructor(props) {
-		super(props)
-	}
-
-	render() {
-		return (
-			<div className="container">
-				<h1 className="title">
-					React + Redux
-				</h1>
-        <Icons />
-				<Counter />
-				<Address />
-			</div>
-		)
-	}
-}
-
-export default App
+export default () => (
+  <div className="container">
+    <h1 className="title">
+      React + Redux
+    </h1>
+    <Icons />
+    <Counter />
+    <Address />
+  </div>
+)

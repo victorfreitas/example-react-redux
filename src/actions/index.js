@@ -1,13 +1,11 @@
-import increment from './increment'
-import decrement from './decrement'
+import makeCounters from './makeCounters'
 import changeZipCode from './changeZipCode'
 import changeAddress from './changeAddress'
 import isWait from './isWait'
 
 export {
-  increment,
-  decrement,
+  makeCounters,
   changeZipCode,
   changeAddress,
-  isWait
+  isWait,
 }

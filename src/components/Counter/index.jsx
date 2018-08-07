@@ -1,39 +1,34 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import ShowCounts from 'src/containers/Counter/ShowCounts'
 
 class Counter extends Component {
-	constructor(props) {
-		super(props)
+  handleClick(value) {
+    const { makeCounters } = this.props
+    makeCounters(value)
+  }
 
-		this.handleIncrement = this.handleIncrement.bind(this)
-		this.handleDecrement = this.handleDecrement.bind(this)
-	}
+  render() {
+    return (
+      <div className="counter-container">
+        <ShowCounts />
+        <div className="buttons">
+          <button type="button" className="btn" onClick={() => this.handleClick(1)}>
+            Increment
+          </button>
 
-	handleIncrement() {
-		this.props.increment();
-	}
+          <button type="button" className="btn" onClick={() => this.handleClick(-1)}>
+            Decrement
+          </button>
+        </div>
+      </div>
+    )
+  }
+}
 
-	handleDecrement() {
-		this.props.decrement()
-	}
-
-	render() {
-		return (
-			<div className='counter-container'>
-				<ShowCounts />
-				<div className='buttons'>
-					<a className='btn' onClick={this.handleIncrement}>
-						Increment
-					</a>
-
-					<a className='btn' onClick={this.handleDecrement}>
-						Decrement
-					</a>
-				</div>
-			</div>
-		)
-	}
+Counter.propTypes = {
+  makeCounters: PropTypes.func.isRequired,
 }
 
 export default Counter

@@ -1,3 +1,7 @@
 .counter-container {
   @extend %section;
 }
+
+.counts strong {
+  margin-left: 3px;
+}

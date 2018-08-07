@@ -1,6 +1,7 @@
 import { ADDRESS_CHANGED, IS_WAIT } from 'src/constants'
-import { viaCepApi } from 'src/environments'
-import { formatZipCode } from 'src/helpers'
+
+import viaCepApi from 'src/environments/viaCepApi'
+import { formatZipCode, checkResponse } from 'src/helpers'
 
 class ChangeAddress {
   constructor(zipCode, dispatch) {
@@ -14,7 +15,7 @@ class ChangeAddress {
   dispatchIsWait(payload) {
     this.dispatch({
       type: IS_WAIT,
-      payload
+      payload,
     })
   }
 
@@ -25,32 +26,24 @@ class ChangeAddress {
   request() {
     fetch(this.getApiUrl())
       .then(res => res.json())
-      .then(this._checkResponse)
-      .then(data => this._done(data))
-      .catch(() => this._error())
+      .then(checkResponse)
+      .then(data => this.done(data))
+      .catch(() => this.error())
   }
 
-  _checkResponse(response) {
-    if (response.erro) {
-      throw new Error()
-    }
-
-    return response
-  }
-
-  _done(data) {
+  done(data) {
     this.dispatchIsWait(false)
     this.dispatch({
       type: ADDRESS_CHANGED,
-      payload: data
+      payload: data,
     })
   }
 
-  _error() {
+  error() {
     this.dispatchIsWait(false)
     this.dispatch({
       type: ADDRESS_CHANGED,
-      payload: {error: `Address not found for this zip code: (${formatZipCode(this.zipCode)})`}
+      payload: { error: `Address not found for this zip code: (${formatZipCode(this.zipCode)})` },
     })
   }
 }

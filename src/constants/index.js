@@ -1,5 +1,4 @@
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
+export const MAKE_COUNTERS = 'MAKE_COUNTERS'
 export const CHANGE_ZIPCODE = 'CHANGE_ZIPCODE'
 export const ADDRESS_CHANGED = 'ADDRESS_CHANGED'
 export const IS_WAIT = 'IS_WAIT'

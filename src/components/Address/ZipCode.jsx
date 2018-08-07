@@ -1,62 +1,68 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-
-import { formatZipCode } from 'src/helpers'
+import PropTypes from 'prop-types'
 
 class ZipCode extends Component {
-	constructor(props) {
-		super(props)
+  constructor(props) {
+    super(props)
 
-		this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChangeZipCode = this.handleChangeZipCode.bind(this)
-	}
-
-	isValidZipCode() {
-		return (this.props.value.length === 8)
-	}
-
-	findZipCode() {
-    this.props.changeAddress(this.props.value)
-    this.props.changeZipCode('')
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-	handleChangeZipCode({ target }) {
-		this.props.changeZipCode(target.value)
-	}
+  requestZipCode(value) {
+    const { changeAddress, changeZipCode } = this.props
 
-	handleSubmit(event) {
-		event.preventDefault()
-		this.findZipCode()
-	}
+    changeAddress(value)
+    changeZipCode('')
+  }
 
-	componentDidUpdate() {
-		if (this.isValidZipCode()) {
-			this.findZipCode()
+  handleChange({ target: { value } }) {
+    const { changeZipCode } = this.props
+
+    changeZipCode(value)
+
+    if (value.length === 8) {
+      this.requestZipCode(value)
     }
   }
 
-	render() {
-		return (
-			<form
-				className={classNames('zipcode-form', {
-					'spinner': this.props.isWait
-				})}
-				onSubmit={this.handleSubmit}
-			>
-				<label htmlFor="zipcode">
-					CEP:
-				</label>
+  handleSubmit(event) {
+    const { value } = this.props
 
-				<input
-          type='number'
-					value={this.props.value}
-					placeholder='Enter your ZIP Code'
-          onChange={this.handleChangeZipCode}
-          disabled={this.props.isWait}
-				/>
-			</form>
-		)
-	}
+    event.preventDefault()
+    this.requestZipCode(value)
+  }
+
+  render() {
+    const { isWait, value } = this.props
+
+    return (
+      <form
+        className={classNames('zipcode-form', { spinner: isWait })}
+        onSubmit={this.handleSubmit}
+      >
+        <label htmlFor="zipcode">
+          CEP:
+          <input
+            type="number"
+            id="zipcode"
+            value={value}
+            placeholder="Enter your ZIP Code"
+            onChange={this.handleChange}
+            disabled={isWait}
+          />
+        </label>
+      </form>
+    )
+  }
+}
+
+ZipCode.propTypes = {
+  value: PropTypes.string.isRequired,
+  changeAddress: PropTypes.func.isRequired,
+  changeZipCode: PropTypes.func.isRequired,
+  isWait: PropTypes.bool.isRequired,
 }
 
 export default ZipCode

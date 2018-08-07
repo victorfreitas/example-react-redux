@@ -1,14 +1,11 @@
-import { INCREMENT, DECREMENT } from 'src/constants'
+import { MAKE_COUNTERS } from 'src/constants'
 
 export default (state = 0, action) => {
-	switch (action.type) {
-		case INCREMENT:
-			return state + 1
+  switch (action.type) {
+    case MAKE_COUNTERS:
+      return state + action.payload
 
-		case DECREMENT:
-			return state - 1
-
-		default:
-			return state
-	}
+    default:
+      return state
+  }
 }

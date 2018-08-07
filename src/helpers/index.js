@@ -1,4 +1,4 @@
-export const formatZipCode = value => {
+export const formatZipCode = (value) => {
   let zipCode = value.substring(0, 5)
 
   if (value.length > 5) {
@@ -6,4 +6,12 @@ export const formatZipCode = value => {
   }
 
   return zipCode
+}
+
+export const checkResponse = (response) => {
+  if (response.erro) {
+    throw new Error()
+  }
+
+  return response
 }

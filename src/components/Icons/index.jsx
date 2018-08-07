@@ -37,17 +37,16 @@ const list = [
   'frustrated',
   'frustrated2',
   'crying',
-  'crying2'
+  'crying2',
 ]
 
 export default () => (
-  <div className='icons-wrap'>
-    <h2>Icons</h2>
-
+  <div className="icons-wrap">
+    <h2>
+      Icons
+    </h2>
     <div className="icons-content">
-      {list.map((icon, i) => (
-        <i key={i} className={`icon icon-${icon}`}></i>
-      ))}
+      {list.map(icon => <i key={icon} className={`icon icon-${icon}`} />)}
     </div>
   </div>
 )

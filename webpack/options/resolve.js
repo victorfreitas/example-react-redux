@@ -6,7 +6,7 @@ module.exports = {
     alias: {
       '~': scss,
       src,
-      assets
-    }
-  }
+      assets,
+    },
+  },
 }

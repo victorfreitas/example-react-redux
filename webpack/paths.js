@@ -1,7 +1,7 @@
 const { join } = require('path')
 
 const root = join(__dirname, '..')
-const assets = `${root}/assets`;
+const assets = `${root}/assets`
 
 module.exports = {
   root,
@@ -10,5 +10,5 @@ module.exports = {
   scss: `${assets}/scss`,
   images: `${assets}/images`,
   html: `${assets}/html`,
-  public: `${root}/docs`
+  public: `${root}/public`,
 }

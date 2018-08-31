@@ -47,8 +47,7 @@ class Autoload {
   }
 
   toObject() {
-    this.toArray()
-      .forEach(this.parseOptions)
+    this.toArray().forEach(this.parseOptions)
 
     return this.options
   }
@@ -56,9 +55,11 @@ class Autoload {
 
 module.exports = (root, method = 'toArray') => {
   try {
-    return (new Autoload(root))[method]()
-  } catch(e) {
-    console.error(`Autoload error: ${e.message}\nRoot: ${root}\nMethod: ${method}\n`)
+    return new Autoload(root)[method]()
+  } catch (e) {
+    console.error(
+      `Autoload error: ${e.message}\nRoot: ${root}\nMethod: ${method}\n`,
+    )
     process.exit(1)
   }
 }

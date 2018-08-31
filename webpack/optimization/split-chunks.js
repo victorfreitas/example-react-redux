@@ -4,8 +4,8 @@ module.exports = {
       commons: {
         test: /[\\/]node_modules[\\/]/,
         name: true,
-        chunks: 'all'
-      }
-    }
-  }
+        chunks: 'all',
+      },
+    },
+  },
 }

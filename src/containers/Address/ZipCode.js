@@ -9,11 +9,9 @@ const mapStateToProps = state => ({
   isWait: state.isWait,
 })
 
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    changeZipCode,
-    changeAddress,
-  }, dispatch)
-)
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeZipCode,
+  changeAddress,
+}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ZipCode)

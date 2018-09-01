@@ -1,36 +1,37 @@
 {
-  "name": "react-redux",
+  "name": "example-react-redux",
   "version": "0.2.0",
-  "description": "React + Redux",
+  "description": "Example: React + Redux",
   "main": "index.js",
   "license": "GPL-3.0",
   "private": true,
+  "homepage": "https://victorfreitas.github.io/example-react-redux",
   "author": {
     "name": "Victor Freitas",
     "email": "victorfreitasdev@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/victorfreitas/starting-react-redux/issues",
+    "url": "https://github.com/victorfreitas/example-react-redux/issues",
     "email": "victorfreitasdev@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/victorfreitas/starting-react-redux.git"
+    "url": "https://github.com/victorfreitas/example-react-redux.git"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --watch --progress",
     "build": "cross-env NODE_ENV=production webpack --progress"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-array-includes": "^2.0.3",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
     "browser-sync": "^2.24.6",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^0.1.19",

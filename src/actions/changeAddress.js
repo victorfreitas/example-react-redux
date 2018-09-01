@@ -48,6 +48,4 @@ class ChangeAddress {
   }
 }
 
-export default zipCode => dispatch => (
-  new ChangeAddress(zipCode, dispatch)
-)
+export default zipCode => dispatch => new ChangeAddress(zipCode, dispatch)

@@ -1,11 +1,13 @@
 import React from 'react'
 
 import ZipCode from 'src/containers/Address/ZipCode'
-import Info from 'src/containers/Address/Info'
+import Result from 'src/containers/Address/Result'
 
-export default () => (
+const Content = () => (
   <div className="address-content">
     <ZipCode />
-    <Info />
+    <Result />
   </div>
 )
+
+export default Content

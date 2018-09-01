@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import ShowCounts from 'src/containers/Counter/ShowCounts'
+import Counts from 'src/containers/Counter/Counts'
+import Buttons from './Buttons'
 
 class Counter extends Component {
-  handleClick(value) {
+  getButtons() {
+    return [
+      { text: 'Increment', click: () => this.addCount(1) },
+      { text: 'Decrement', click: () => this.addCount(-1) },
+    ]
+  }
+
+  addCount(value) {
     const { makeCounters } = this.props
     makeCounters(value)
   }
@@ -12,16 +20,8 @@ class Counter extends Component {
   render() {
     return (
       <div className="counter-container">
-        <ShowCounts />
-        <div className="buttons">
-          <button type="button" className="btn" onClick={() => this.handleClick(1)}>
-            Increment
-          </button>
-
-          <button type="button" className="btn" onClick={() => this.handleClick(-1)}>
-            Decrement
-          </button>
-        </div>
+        <Counts />
+        <Buttons list={this.getButtons()} />
       </div>
     )
   }

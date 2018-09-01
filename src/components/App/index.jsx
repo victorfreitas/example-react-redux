@@ -1,16 +1,18 @@
 import React from 'react'
 
 import Counter from 'src/containers/Counter'
-import Address from 'src/components/Address'
-import Icons from 'src/components/Icons'
+import Container from '../Container'
+import Header from '../Header'
+import Address from '../Address'
+import Icons from '../Icons'
 
-export default () => (
-  <div className="container">
-    <h1 className="title">
-      React + Redux
-    </h1>
+const App = () => (
+  <Container>
+    <Header />
     <Icons />
     <Counter />
     <Address />
-  </div>
+  </Container>
 )
+
+export default App

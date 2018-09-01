@@ -1,1 +1,1 @@
-# React + Redux
+# Example: React + Redux
